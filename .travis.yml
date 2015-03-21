@@ -3,7 +3,6 @@ rvm:
   - 2.2.1
   - ruby-head
   - jruby-head
-  - rbx-2
 env:
   secure: "mI2C4C/dYwBBjz80tBsKf9UVNHTpdS8AAMf+FBGfVTOzbeMgKhhhTVavszkgcZhNt5hvpr2vu+5XnNkhtwG+K78F2t51W2yjdjUp77mPCsl0rK3u0M+uIg2LbR7nGWpY+j4pyWov5lC1hrqE9BIZ3Ey4eiOmJvcyL0byhdF1kI8="
 script:
