@@ -1,4 +1,6 @@
 # coding: utf-8
+require 'cs_client/responses'
+
 module CSClient
   class Authenticator
     attr_reader :connection, :user
