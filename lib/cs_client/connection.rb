@@ -19,7 +19,7 @@ module CSClient
 
     def initialize(http_connection = nil, options = {})
       @http_connection = http_connection || default_http_connection
-      @logger = options[:logger] || PutsLogger.new
+      @logger = options[:logger] || NullLogger.new
     end
 
     def request *args
