@@ -1,3 +1,5 @@
+require 'delegate'
+
 module CSClient
   class Response < Delegator
     attr_reader :http_response

@@ -12,3 +12,4 @@
 *.o
 *.a
 mkmf.log
+vcr_cassettes
