@@ -15,10 +15,6 @@ module CSClient
       @connection = connection
     end
 
-    def authenticator
-      @authenticator ||= Authenticator.new connection, user
-    end
-
     def request *args
       response = authenticated_request *args
       raise "Could not authenticate with username #{user}" unless response.authenticated?
