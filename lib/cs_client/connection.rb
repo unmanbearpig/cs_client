@@ -18,11 +18,7 @@ module CSClient
     attr_reader :http_connection, :logger
 
     def initialize(http_connection = nil, options = {})
-      @http_connection = http_connection || Faraday.new(:url => "https://www.couchsurfing.com") do |builder|
-        builder.use :cookie_jar
-        builder.adapter Faraday.default_adapter
-      end
-
+      @http_connection = http_connection || default_http_connection
       @logger = options[:logger] || PutsLogger.new
     end
 
@@ -33,6 +29,15 @@ module CSClient
       response = r.submit http_connection
       logger.log response
       response
+    end
+
+    private
+
+    def default_http_connection
+      Faraday.new(:url => "https://www.couchsurfing.com") do |builder|
+        builder.use :cookie_jar
+        builder.adapter Faraday.default_adapter
+      end
     end
   end
 end
