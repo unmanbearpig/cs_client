@@ -1,0 +1,11 @@
+AllCops:
+  DisplayCopNames: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassCheck:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  Enabled: false

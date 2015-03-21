@@ -16,8 +16,12 @@ module CSClient
     end
 
     def request *args
-      response = authenticated_request *args
-      raise "Could not authenticate with username #{user}" unless response.authenticated?
+      response = authenticated_request(*args)
+
+      unless response.authenticated?
+        fail "Could not authenticate with username #{user}"
+      end
+
       response
     end
 
@@ -26,10 +30,10 @@ module CSClient
     attr_reader :connection
 
     def authenticated_request *args
-      response = connection.request *args
+      response = connection.request(*args)
       unless response.authenticated?
         authenticator.log_in
-        response = connection.request *args
+        response = connection.request(*args)
       end
 
       response

@@ -3,8 +3,7 @@ require 'faraday'
 require 'faraday-cookie_jar'
 require 'nokogiri'
 
-require "cs_client/version"
-# require 'cs_client/*.rb'
+require 'cs_client/version'
 
 Dir.chdir 'lib' do
   Dir.glob('cs_client/*.rb') do |path|

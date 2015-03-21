@@ -5,7 +5,7 @@ module CSClient
     include HttpVerbs
 
     class NullLogger
-      def log *args
+      def log *_args
       end
     end
 
@@ -19,11 +19,11 @@ module CSClient
 
     def initialize(http_connection = nil, options = {})
       @http_connection = http_connection || default_http_connection
-      @logger = options[:logger] || NullLogger.new
+      @logger = options[:logger] || PutsLogger.new
     end
 
     def request *args
-      r = Request.new *args
+      r = Request.new(*args)
       logger.log r
 
       response = r.submit http_connection
@@ -34,7 +34,7 @@ module CSClient
     private
 
     def default_http_connection
-      Faraday.new(:url => "https://www.couchsurfing.com") do |builder|
+      Faraday.new(url: 'https://www.couchsurfing.com') do |builder|
         builder.use :cookie_jar
         builder.adapter Faraday.default_adapter
       end

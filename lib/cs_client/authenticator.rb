@@ -11,7 +11,7 @@ module CSClient
     end
 
     def log_in
-      response = sign_in_form.post_via connection
+      sign_in_form.post_via connection
     end
 
     def sign_in_form
@@ -38,7 +38,7 @@ module CSClient
       end
 
       def post_params
-        { utf8: "✓",
+        { utf8: '✓',
           authenticity_token: authenticity_token,
           'user[login]' => user.username,
           'user[password]' => user.password,

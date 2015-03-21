@@ -3,7 +3,7 @@ require 'cs_client/response'
 module CSClient
   class BasicResponse < Response
     def self.url
-      raise "Override me"
+      fail 'Override me'
     end
 
     def self.method

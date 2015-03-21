@@ -22,7 +22,7 @@ module CSClient
     end
 
     def to_s
-      "  > #{http_response.headers['status']} #{http_response.headers['location'] || ''}"
+      " > #{http_response.headers[:status]} #{http_response.headers[:location]}"
     end
   end
 end

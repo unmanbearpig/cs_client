@@ -15,10 +15,10 @@ module HTMLHelper
     end
 
     def body
-      raise "Expected response object, got nil" if object.nil?
+      fail 'Expected response object, got nil' if object.nil?
       return object if object.kind_of? String
       return object.body if object.respond_to?(:body)
-      return object.to_s
+      object.to_s
     end
 
     def doc

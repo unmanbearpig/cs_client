@@ -16,10 +16,10 @@ module CSClient
 
     def submit http_connection
       Response.new http_connection.run_request(
-                     method,
-                     path,
-                     encoded_params,
-                     headers)
+        method,
+        path,
+        encoded_params,
+        headers)
     end
 
     def encoded_params
