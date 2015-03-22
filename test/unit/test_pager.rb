@@ -3,7 +3,7 @@ require 'test_helper'
 module CSClient
   class PagerTest < Minitest::Test
     def body
-      File.read('test/assets/search_page.html')
+      File.read('test/assets/pagination/first_page.html')
     end
 
     def pager_element
