@@ -3,6 +3,10 @@ require_relative 'html_helper'
 class AcceptanceTest < Minitest::Test
   include HTMLHelper
 
+  def client
+    @client ||= Client.new username: username, password: password
+  end
+
   def username
     ENV['CS_USERNAME']
   end
