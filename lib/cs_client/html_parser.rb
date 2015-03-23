@@ -1,3 +1,5 @@
+require 'active_support/json'
+
 module CSClient
   class HTMLParser
     def initialize(body_or_element)
@@ -11,6 +13,21 @@ module CSClient
         return @body_or_element
       end
       @doc ||= Nokogiri::HTML(extract_response_body(@body_or_element))
+    end
+
+    def self.fields
+      public_instance_methods - superclass.public_instance_methods
+    end
+
+    def to_h
+      self.class.fields.reduce({}) do |acc, field|
+        acc[field] = self.send(field)
+        acc
+      end.as_json
+    end
+
+    def as_json options = nil
+      to_h
     end
 
     private
