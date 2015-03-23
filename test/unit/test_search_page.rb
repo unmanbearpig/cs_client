@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module CSClient
-  class SearchPageTest < Minitest::Test
+  class SearchPageUnitTest < Minitest::Test
     def body
       File.read('test/assets/search_page.html')
     end

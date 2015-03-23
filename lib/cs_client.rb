@@ -44,5 +44,9 @@ module CSClient
     def connection
       @connection ||= options.connection
     end
+
+    def search_page path
+      SearchPage.fetch path, via: connection
+    end
   end
 end
