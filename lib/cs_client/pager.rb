@@ -38,12 +38,15 @@ module CSClient
     end
 
     def pages_info
+      return {} unless pager_description
+
       /(?<current>\d+)\s+of\s+(?<total>\d+)/
         .match(pager_description)
     end
 
     def pager_description
-      doc.css('.pager.pager--label').first.text.strip
+      doc.css('.pager.pager--label').first
+        .try(:text).try(:strip)
     end
   end
 end
