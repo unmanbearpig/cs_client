@@ -29,5 +29,10 @@ module CSClient
     def test_total_results
       assert_operator 40, :<, search_page.total_results
     end
+
+    def test_serialization
+      assert_kind_of Array, search_page.to_h['items']
+      assert_kind_of String, search_page.to_h['items'][4]['name']
+    end
   end
 end
