@@ -16,8 +16,14 @@ module CSClient
       ENV['CS_PASSWORD']
     end
 
+    def vcr_record_mode
+      (ENV['RECORD_MODE'] || :once).to_sym
+    end
+
     def vcr(name = nil, &block)
-      VCR.use_cassette(vcr_cassette_path(name), &block)
+      VCR.use_cassette(vcr_cassette_path(name),
+                       record: vcr_record_mode,
+                       &block)
     end
 
     def vcr_cassette_path name = nil
