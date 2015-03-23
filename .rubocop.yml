@@ -9,3 +9,6 @@ Style/ClassCheck:
 
 Style/MethodDefParentheses:
   Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
