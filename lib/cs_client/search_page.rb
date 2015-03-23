@@ -17,7 +17,7 @@ module CSClient
     end
 
     def pager
-      Pager.new(doc.css('pager').first)
+      Pager.new(doc.css('.pagination').first)
     end
 
     private
