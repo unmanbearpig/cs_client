@@ -8,7 +8,7 @@ module CSClient
 
     def test_authentication
       assert_equal 200, response.status
-      assert html(response).any?('.profile-status')
+      assert html(response).any?('.cs-host-info')
     end
   end
 end
