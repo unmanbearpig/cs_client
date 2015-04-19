@@ -1,4 +1,4 @@
-require_relative 'html_parser'
+require 'cs_client/html_parser'
 
 module CSClient
   class Pager < HTMLParser

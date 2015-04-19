@@ -22,12 +22,12 @@ module CSClient
 
     def to_h
       self.class.fields.reduce({}) do |acc, field|
-        acc[field] = self.send(field)
+        acc[field] = send(field)
         acc
       end.as_json
     end
 
-    def as_json options = nil
+    def as_json _options = nil
       to_h
     end
 

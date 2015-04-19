@@ -1,6 +1,6 @@
-require_relative '../html_parser'
-require_relative '../pager'
-require_relative 'search_page_item'
+require 'cs_client/html_parser'
+require 'cs_client/pager'
+require 'cs_client/search/search_page_item'
 
 module CSClient
   class SearchPage < HTMLParser
