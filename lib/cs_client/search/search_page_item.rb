@@ -1,4 +1,4 @@
-require_relative 'html_parser'
+require_relative '../html_parser'
 
 module CSClient
   class SearchPageItem < HTMLParser

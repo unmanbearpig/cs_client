@@ -1,4 +1,7 @@
+require 'minitest/autorun'
 require_relative 'html_helper'
+require 'cs_client'
+require 'vcr'
 
 module CSClient
   class AcceptanceTest < Minitest::Test
@@ -30,4 +33,9 @@ module CSClient
       name ? "#{self.class.name}##{name}" : location
     end
   end
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'vcr_cassettes'
+  config.hook_into :webmock
 end

@@ -15,6 +15,10 @@ module CSClient
       @connection = connection
     end
 
+    def logger
+      connection.logger
+    end
+
     def request *args
       response = authenticated_request(*args)
 
@@ -32,6 +36,7 @@ module CSClient
     def authenticated_request *args
       response = connection.request(*args)
       unless response.authenticated?
+        logger.log "# We're not authenticated, logging in and retrying request."
         authenticator.log_in
         response = connection.request(*args)
       end

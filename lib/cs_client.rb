@@ -9,6 +9,10 @@ Dir.chdir 'lib' do
   Dir.glob('cs_client/*.rb') do |path|
     require path
   end
+
+  Dir.glob('cs_client/*/*.rb') do |path|
+    require path
+  end
 end
 
 module CSClient

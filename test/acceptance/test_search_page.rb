@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'support/acceptance_test'
 
 module CSClient
   class SearchPageAcceptanceSmokeTest < AcceptanceTest

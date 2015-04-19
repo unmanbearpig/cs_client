@@ -1,5 +1,5 @@
-require_relative 'html_parser'
-require_relative 'pager'
+require_relative '../html_parser'
+require_relative '../pager'
 
 module CSClient
   class SearchPage < HTMLParser
