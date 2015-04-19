@@ -1,12 +1,9 @@
 require 'minitest/autorun'
-require_relative 'html_helper'
 require 'cs_client'
 require 'vcr'
 
 module CSClient
   class AcceptanceTest < Minitest::Test
-    include HTMLHelper
-
     def client
       @client ||= Client.new username: username, password: password
     end

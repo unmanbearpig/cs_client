@@ -1,7 +1,10 @@
 require 'support/acceptance_test'
+require 'support/html_helper'
 
 module CSClient
   class AuthenticationTest < AcceptanceTest
+    include HTMLHelper
+
     def response
       @response ||= vcr('dashboard') { client.connection.get '/dashboard' }
     end
