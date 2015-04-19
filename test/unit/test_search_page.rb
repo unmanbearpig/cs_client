@@ -1,4 +1,5 @@
-require 'test_helper'
+require 'cs_client/search/search_page'
+require 'minitest/autorun'
 
 module CSClient
   class SearchPageUnitTest < Minitest::Test

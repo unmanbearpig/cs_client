@@ -3,6 +3,7 @@
 require 'cs_client/responses'
 require 'cs_client/http_verbs'
 require 'cs_client/authenticator'
+require 'cs_client/connection'
 
 module CSClient
   class AuthenticatedConnection

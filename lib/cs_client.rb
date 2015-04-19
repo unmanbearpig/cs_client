@@ -4,16 +4,8 @@ require 'faraday-cookie_jar'
 require 'nokogiri'
 
 require 'cs_client/version'
-
-Dir.chdir 'lib' do
-  Dir.glob('cs_client/*.rb') do |path|
-    require path
-  end
-
-  Dir.glob('cs_client/*/*.rb') do |path|
-    require path
-  end
-end
+require 'cs_client/user'
+require 'cs_client/authenticated_connection'
 
 module CSClient
   class Client

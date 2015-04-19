@@ -1,4 +1,5 @@
 require 'cs_client/http_verbs'
+require 'cs_client/request'
 
 module CSClient
   class Connection

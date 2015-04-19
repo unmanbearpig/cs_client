@@ -1,3 +1,4 @@
+require 'nokogiri'
 require 'active_support/json'
 
 module CSClient

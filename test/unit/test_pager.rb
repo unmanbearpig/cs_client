@@ -1,4 +1,5 @@
-require 'test_helper'
+require 'cs_client/pager'
+require 'minitest/autorun'
 
 module CSClient
   class PagerTest < Minitest::Test

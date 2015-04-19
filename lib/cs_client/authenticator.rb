@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'cs_client/responses'
+require 'cs_client/responses/html_response'
 
 module CSClient
   class Authenticator
